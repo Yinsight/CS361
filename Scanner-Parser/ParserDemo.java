@@ -1,6 +1,6 @@
 public class ParserDemo {
 
-	private static String file1 = "/Users/heatheryin/Desktop/test/prog4.jay";
+	private static String file1 = "/Users/heatheryin/Desktop/test/prog2.jay.txt";
 	
 	public static void main(String[] args) {
 		TokenStream tStream = new TokenStream(file1);
