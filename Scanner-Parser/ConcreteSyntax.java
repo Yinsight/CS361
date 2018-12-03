@@ -1,3 +1,8 @@
+/**
+ * @author Yunting (Heather) Yin
+ * 
+ */
+
 // ConcreteSyntax.java
 
 // Implementation of the Recursive Descent Parser algorithm
@@ -44,12 +49,11 @@ public class ConcreteSyntax {
 
 	public Program program() {
 		// Program --> void main ( ) '{' Declarations Statements '}'
-		String[] header = { "main", "(", ")" };
+		String[] header = { "void", "main", "(", ")" , "{"};
 		Program p = new Program();
 		for (int i = 0; i < header.length; i++)
 			// bypass "void main ( )"
 			match(header[i]);
-		match("{");
 		p.decpart = declarations();
 		p.body = statements();
 		match("}");
