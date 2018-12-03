@@ -152,11 +152,9 @@ public class ConcreteSyntax {
 			a.target = new Variable();
 			a.target.id = token.getValue();
 			token = input.nextToken();
-			if (token.getValue().equals("=")){
-				token = input.nextToken();
-				Expression e = expression();
-				a.source = e;
-			}
+			match("=");
+			a.source = expression();
+			match(";");
 		} else
 			throw new RuntimeException(SyntaxError("Identifier"));
 		return a;
@@ -295,6 +293,14 @@ public class ConcreteSyntax {
 		// IfStatement --> if ( Expression ) Statement { else Statement }opt
 		Conditional c = new Conditional();
 		// TO BE COMPLETED
+		match("if");
+		match("(");
+		c.test = expression();
+		
+		if(token.getValue().equals("else")){
+			token = input.nextToken();
+			c.elsebranch = statement();
+		}
 		return c;
 	}
 
@@ -302,6 +308,11 @@ public class ConcreteSyntax {
 		// WhileStatement --> while ( Expression ) Statement
 		Loop l = new Loop();
 		// TO BE COMPLETED
+		match("while");
+		match("(");
+		l.test = expression();
+		match(")");
+		l.body = statement();
 		return l;
 	}
 
