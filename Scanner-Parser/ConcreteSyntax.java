@@ -1,8 +1,3 @@
-/**
- * @author Yunting (Heather) Yin
- * 
- */
-
 // ConcreteSyntax.java
 
 // Implementation of the Recursive Descent Parser algorithm
