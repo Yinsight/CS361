@@ -1,7 +1,3 @@
-/**
- * @author Krutika Wadhwa
- * 
- */
 public class ScannerDemo {
 
 	private static String file1 = "C:\\\\Users\\\\Krutika Wadhwa\\\\Desktop\\\\ParserScannerTests(1) (1)\\\\ParserScannerTests\\\\SCANNER\\\\prog1.jay";
